@@ -1,0 +1,25 @@
+function buyPhone() {
+    var phonePrice = 100;
+    var accessory = 10;
+    var taxes = 0.08;
+    var purchasedPhones = 0;
+    var purchasedAccessories = 0;
+    var myMoney = prompt('how much money do you have?');
+    var totalPhonePrice = phonePrice = phonePrice + (phonePrice * taxes);
+    
+
+    console.log('The price of the phone + taxes is $' + totalPhonePrice.toFixed(2));
+    
+    while (myMoney >= totalPhonePrice) {
+        myMoney -= phonePrice;
+        console.log("phone purchased, your total money is $" + myMoney.toFixed(2));
+        purchasedPhones++
+        if (myMoney >= accessory) {
+            myMoney -= accessory;
+            console.log("accessory purchased, your total money is $" + myMoney.toFixed(2));
+            purchasedAccessories++
+        }
+    }
+    
+  console.log("no more money to buy phones, your ballance is $" + myMoney.toFixed(2) + ', you purchased ' + purchasedPhones + ' phones and ' + purchasedAccessories + ' accessories.');
+}
